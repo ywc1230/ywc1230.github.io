@@ -1,0 +1,10 @@
+---
+title: "About me"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This is Chloe's awesome website
+

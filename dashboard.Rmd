@@ -1,0 +1,44 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
+runtime: shiny
+---
+
+```{r setup, include = FALSE}
+
+library(tidyverse)
+library(p8105.datasets)
+library(plotly)
+library(flexdashboard)
+
+```
+
+Column {.sidebar}
+-----------------------------------------------------------------------
+
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+### Chart A
+
+```{r}
+
+data(rest_inspec)
+
+  rest_inspec %>%
+  filter(str_detect(cuisine_description, "Korean")) %>%
+  mutate(boro = fct_infreq(boro)) %>%
+  plot_ly(x = ~boro, y = ~grade, color = ~grade, type = "bar", colors = "viridis") 
+
+
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+### Chart B
+
+### Chart C

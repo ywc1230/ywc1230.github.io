@@ -1,0 +1,13 @@
+---
+title: "My awesome website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+# This is Chloe's awesome website
+
+## Links to page within the site
+
+[About me](about.html)
