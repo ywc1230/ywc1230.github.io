@@ -44,6 +44,19 @@ Column {data-width=350}
 -----------------------------------------------------------------------
 ### Chart B
 
+```{r}
+
+korean_df %>%
+  filter(str_detect(critical_flag, "Critical")) %>%
+  drop_na(score) %>%
+  group_by(grade_date, boro, dba) %>%
+  summarise(avg_score = mean(score)) %>%
+  plot_ly(x = ~grade_date, y = ~avg_score, type = "scatter", mode = "lines", color = ~boro, colors = "viridis") %>%
+  layout(title = "Average score by borough from 2014-2017", xaxis = list(title ="Date"), yaxis = list(title="Average score"))
+
+```
+
+
 ### Chart C
 
 ```{r}
