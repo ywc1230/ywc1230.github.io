@@ -1,5 +1,5 @@
 ---
-title: "Chloe Chah - P8105 HW4"
+title: "yc3727 - P8105 HW4"
 output: 
   html_document:
     toc: true
