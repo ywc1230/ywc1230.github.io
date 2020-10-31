@@ -17,28 +17,33 @@ library(flexdashboard)
 
 ```
 
-Column {.sidebar}
------------------------------------------------------------------------
+```{r}
+data(rest_inspec)
 
+korean_df = rest_inspec %>%
+            filter(str_detect(cuisine_description, "Korean"))
+
+```
 
 Column {data-width=650}
 -----------------------------------------------------------------------
 ### Chart A
 
-```{r}
 
-data(rest_inspec)
-
-  rest_inspec %>%
-  filter(str_detect(cuisine_description, "Korean")) %>%
-  mutate(boro = fct_infreq(boro)) %>%
-  plot_ly(x = ~boro, y = ~grade, color = ~grade, type = "bar", colors = "viridis") 
-
-
-```
 
 Column {data-width=350}
 -----------------------------------------------------------------------
 ### Chart B
 
 ### Chart C
+
+```{r}
+
+korean_df %>%
+  filter(str_detect(cuisine_description, "Korean")) %>%
+  mutate(boro = fct_infreq(boro)) %>%
+  plot_ly(x = ~boro, y = ~grade, color = ~grade, type = "histogram", colors =   "viridis") %>%
+  layout(title = "Distribution of grade by boroughs", xaxis = list(title ="Borough"), yaxis = list(title="Count"))
+
+
+```
