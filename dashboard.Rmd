@@ -29,6 +29,15 @@ Column {data-width=650}
 -----------------------------------------------------------------------
 ### Chart A
 
+```{r}
+
+korean_df %>%
+  filter(dba %in% c("DANJI", "JONGRO BBQ", "CHO DANG GOL", "GAMMEEOK", "TAKE 31")) %>%
+  plot_ly(x = ~dba, y = ~score, color = ~dba, type = "box", colors =   "viridis") %>%
+  layout(title = "Distribution of scores for favorite restaurants", xaxis = list(title ="Restaurant name"), yaxis = list(title="Score"))
+
+
+```
 
 
 Column {data-width=350}
@@ -40,7 +49,6 @@ Column {data-width=350}
 ```{r}
 
 korean_df %>%
-  filter(str_detect(cuisine_description, "Korean")) %>%
   mutate(boro = fct_infreq(boro)) %>%
   plot_ly(x = ~boro, y = ~grade, color = ~grade, type = "histogram", colors =   "viridis") %>%
   layout(title = "Distribution of grade by boroughs", xaxis = list(title ="Borough"), yaxis = list(title="Count"))
