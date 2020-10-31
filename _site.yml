@@ -3,7 +3,7 @@ output_dir: "."
 navbar:
   title: "Home"
   right:
-    - text: "About"
+    - text: "Resume"
       href: about.html
     - text: "Dashboard"
       href: dashboard.html
@@ -15,4 +15,4 @@ navbar:
       href: http://github.com/ywc1230/
 output:
   html_document:
-    theme: flatly
+    theme: lumen

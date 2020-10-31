@@ -1,13 +1,13 @@
 ---
-title: "My awesome website"
+title: "Chloe Chah - P8105 HW4"
 output: 
   html_document:
     toc: true
     toc_float: true
 ---
 
-# This is Chloe's awesome website
+<img src="./Image/campus.jpg" style="width:100%">
 
-## Links to page within the site
+## Overview 
 
-[About me](about.html)
+This website contains my work for assignment 4. The navigation bar contains links to my resume, GitHub account, email, and LinkedIn. It also contains a page to a flexdashboard using plotly based on the NYC Restaurant inspection data from 2014 to 2017, specifically focusing on Korean restaurants in New York. 
