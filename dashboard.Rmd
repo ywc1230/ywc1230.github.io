@@ -34,7 +34,7 @@ Column {data-width=650}
 korean_df %>%
   filter(dba %in% c("DANJI", "JONGRO BBQ", "CHO DANG GOL", "GAMMEEOK", "TAKE 31")) %>%
   plot_ly(x = ~dba, y = ~score, color = ~dba, type = "box", colors =   "viridis") %>%
-  layout(title = "Distribution of scores for favorite restaurants", xaxis = list(title ="Restaurant name"), yaxis = list(title="Score"))
+  layout(title = "Distribution of scores for Chloe's favorite Korean restaurants", xaxis = list(title ="Restaurant name"), yaxis = list(title="Score"))
 
 
 ```
@@ -47,12 +47,12 @@ Column {data-width=350}
 ```{r}
 
 korean_df %>%
-  filter(str_detect(critical_flag, "Critical")) %>%
   drop_na(score) %>%
+  sample_n(1000) %>%
   group_by(grade_date, boro, dba) %>%
   summarise(avg_score = mean(score)) %>%
-  plot_ly(x = ~grade_date, y = ~avg_score, type = "scatter", mode = "lines", color = ~boro, colors = "viridis") %>%
-  layout(title = "Average score by borough from 2014-2017", xaxis = list(title ="Date"), yaxis = list(title="Average score"))
+  plot_ly(x = ~grade_date, y = ~avg_score, type = "scatter", mode = "line", color = ~boro, colors = "viridis") %>%
+  layout(title = "Average score of Korean restaurants by borough from 2013-2017", xaxis = list(title ="Date"), yaxis = list(title="Average score"))
 
 ```
 
@@ -63,8 +63,10 @@ korean_df %>%
 
 korean_df %>%
   mutate(boro = fct_infreq(boro)) %>%
-  plot_ly(x = ~boro, y = ~grade, color = ~grade, type = "histogram", colors =   "viridis") %>%
-  layout(title = "Distribution of grade by boroughs", xaxis = list(title ="Borough"), yaxis = list(title="Count"))
+  group_by(boro, grade) %>%
+  summarise(count = n()) %>%
+  plot_ly(x = ~boro, y = ~count, color = ~grade, type = "bar", colors = "viridis") %>%
+  layout(title = "Distribution of grades for Korean restaurants by boroughs", xaxis = list(title ="Borough"), yaxis = list(title="Count", range = c(0,1000)))
 
 
 ```

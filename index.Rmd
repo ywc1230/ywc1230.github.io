@@ -10,4 +10,4 @@ output:
 
 ## Overview 
 
-This website contains my work for assignment 4. The navigation bar contains links to my resume, GitHub account, email, and LinkedIn. It also contains a page to a flexdashboard using plotly based on the NYC Restaurant inspection data from 2014 to 2017, specifically focusing on Korean restaurants in New York. 
+This website contains my work for assignment 4. The navigation bar contains links to my resume, GitHub account, email, and LinkedIn. It also contains a page to a flexdashboard using plotly based on the NYC Restaurant inspection data from 2013 to 2017, specifically focusing on Korean restaurants in New York. 
