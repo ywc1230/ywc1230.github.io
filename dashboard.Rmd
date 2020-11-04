@@ -25,7 +25,7 @@ korean_df = rest_inspec %>%
 
 ```
 
-Column {data-width=650}
+Column {data-width=550}
 -----------------------------------------------------------------------
 ### Chart A
 
@@ -40,7 +40,7 @@ korean_df %>%
 ```
 
 
-Column {data-width=350}
+Column {data-width=450}
 -----------------------------------------------------------------------
 ### Chart B
 
@@ -52,7 +52,7 @@ korean_df %>%
   group_by(grade_date, boro, dba) %>%
   summarise(avg_score = mean(score)) %>%
   plot_ly(x = ~grade_date, y = ~avg_score, type = "scatter", mode = "line", color = ~boro, colors = "viridis") %>%
-  layout(title = "Average score of Korean restaurants by borough from 2013-2017", xaxis = list(title ="Date"), yaxis = list(title="Average score"))
+  layout(title = "Avg.score of Korean restaurants by boro", xaxis = list(title ="Date"), yaxis = list(title="Average score"))
 
 ```
 
@@ -66,7 +66,7 @@ korean_df %>%
   group_by(boro, grade) %>%
   summarise(count = n()) %>%
   plot_ly(x = ~boro, y = ~count, color = ~grade, type = "bar", colors = "viridis") %>%
-  layout(title = "Distribution of grades for Korean restaurants by boroughs", xaxis = list(title ="Borough"), yaxis = list(title="Count", range = c(0,1000)))
+  layout(title = "Distribution of grades for Korean restaurants by boro", xaxis = list(title ="Borough"), yaxis = list(title="Count", range = c(0,1000)))
 
 
 ```
