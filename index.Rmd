@@ -10,4 +10,14 @@ output:
 
 ## Overview 
 
-This website contains my work for assignment 4. The navigation bar contains links to my resume, GitHub account, email, and LinkedIn. It also contains a page to a flexdashboard using plotly based on the NYC Restaurant inspection data from 2013 to 2017, specifically focusing on Korean restaurants in New York. 
+This website contains my work for assignment 4. The navigation bar contains links to my resume, GitHub account, email, and LinkedIn. It also contains a page to a flexdashboard using plotly based on the NYC Restaurant inspection data from 2013/2014 to 2017, specifically focusing on Korean restaurants in New York. 
+
+### Chart A
+I created a boxplot because I wanted to get a better understanding of the distribution of inspection scores assigned for 5 of my favorite Korean restaurants in New York City. The results are consistent with my hypothesis that Cho Dang Gol would have the highest median inspection score based on my personal experience with the restaurant. 
+
+
+### Chart B
+I created a time series plot to examine if there are any noticeable trends in the average inspection score over time. I graphed it based on a subset of the sample because the original graph was too noisy. The spikes in the average inspection score do seem to happen around roughly the same season across the boroughs with some variability. I was not able to identify an overt trend as the value does seem to fluctuate quite a bit over time.
+
+### Chart C 
+I created a bar graph to visualize the distribution of the grades by borough. It is comforting that most grades fall under the "A" category. It is also not surprising that most Korean restaurants are located in Queens and Manhattan as there tends to be a bigger Korean community in those cities. 
